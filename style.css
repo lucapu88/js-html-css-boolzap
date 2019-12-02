@@ -25,6 +25,7 @@
   width: 100%;
   height: 10%;
   background-color: blue;
+  position: relative;
 }
 .container-right{
   width: 70%;
@@ -43,4 +44,51 @@
   height: 10%;
   background-color: green;
   display: flex;
+}
+.user-img img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  padding: 5px;
+}
+.notifiche {
+  background-color: #02C0A8;
+}
+.bell-content i {
+  color: #02C0A8;
+  padding: 10px;
+  background-color: white;
+  border-radius: 50%;
+  margin: 10px;
+  float: left;
+}
+.notifiche-text {
+  float: left;
+  margin-top: 10px;
+}
+.search i {
+  margin-left: 5px;
+}
+.search input {
+  border-radius: 30px;
+  width: 88%;
+  margin: 5px;
+}
+.emoticon {
+  width: 10%;
+}
+.chat {
+  width: 80%;
+}
+.chat-send {
+  width: 10%;
+}
+.chat input {
+  margin: 15px;
+  border-radius: 5px;
+  padding: 5px;
+  width: 95%;
+}
+.bottom-right i {
+  padding: 20px;
 }
