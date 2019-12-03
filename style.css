@@ -5,12 +5,18 @@
 }
 /* contenitore totale */
 .container-full{
-  background-color: grey;
   width: 100vw;
   height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
+  background-image:
+  linear-gradient(to bottom,
+    #009688 0px,
+    #009688 15vh,
+    #dddbd1 15vh,
+    #d2dbdc 100%
+    );
 }
 /* contenitore del quadrato centrale di tutta l'app */
 .container-chat {
@@ -29,6 +35,20 @@
   position: relative;
   background-color: lightgrey;
 }
+.search {
+  background-color: #F3EEEA;
+}
+.search i {
+  margin-left: 5px;
+}
+.search input {
+  border-radius: 30px;
+  width: 88%;
+  margin: 5px;
+}
+.contatti {
+  border-bottom: 1px solid lightgrey;
+}
 .icon {
   float: right;
   margin-right: 10px;
@@ -44,12 +64,19 @@ i:hover {
 }
 /* contenitore campanella */
 .bell-content i {
-  color: #02C0A8;
+  color: #8EDAFC;
   padding: 10px;
   background-color: white;
   border-radius: 50%;
   margin: 10px;
   float: left;
+}
+.notifiche {
+  background-color: #8EDAFC;
+}
+.notifiche-text {
+  float: left;
+  margin-top: 10px;
 }
 /* contenitore della colonna di sinistra fine */
 /* contenitore della parte di destra inizio */
@@ -59,6 +86,7 @@ i:hover {
   flex-direction: column;
   border-left: 1px solid grey;
 }
+
 /* barra del contatto in alto */
 .top-right {
   width: 100%;
@@ -71,17 +99,20 @@ i:hover {
 .center-right{
   width: 100%;
   height: 80%;
-  background-color: #EAE5DF;
+  background-image: url('https://www.10wallpaper.com/wallpaper/medium/1409/starry_night-Apple_iOS8_iPhone6_Plus_HD_Wallpaper_medium.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
   align-items: flex-start;
+  overflow-y: scroll;
 }
 /* barra di inserimento messaggio */
 .bottom-right {
   width: 100%;
   height: 10%;
-  background-color: lightgrey;
+  background-color: #F3EEEA;
   display: flex;
 }
 .bottom-right i {
@@ -102,21 +133,6 @@ i:hover {
 .nome-accesso {
   padding-top: 5px;
 }
-.notifiche {
-  background-color: #02C0A8;
-}
-.notifiche-text {
-  float: left;
-  margin-top: 10px;
-}
-.search i {
-  margin-left: 5px;
-}
-.search input {
-  border-radius: 30px;
-  width: 88%;
-  margin: 5px;
-}
 .nome-stato {
   float: right;
   width: 80%;
@@ -133,18 +149,13 @@ i:hover {
 .chat-send {
   width: 10%;
 }
-.fa-paper-plane {
-  display: none;
-}
-.fa-paper-plane.active {
-  display: block;
-}
 .chat input {
   margin: 15px;
   border-radius: 5px;
   padding: 5px;
   width: 95%;
 }
+/* contenitore della parte di destra fine */
 .message {
   background-color: lightgreen;
   align-self: flex-end;
@@ -152,7 +163,18 @@ i:hover {
   padding: 20px;
   margin-right: 30px;
 }
+.message-recevied {
+  background-color: white;
+  border-radius: 10px;
+  padding: 20px;
+  margin-left: 30px;
+}
 .template {
   display: none;
 }
-/* contenitore della parte di destra fine */
+.template2 {
+  display: none;
+}
+.message-time {
+  font-size: 10px;
+}
