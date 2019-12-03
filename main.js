@@ -2,11 +2,21 @@
 
 $(document).ready(function() {
 //al click su chat-send
-$('.chat-send').click(function(){
-  //quando scrivo nel placeholder
-  var messaggio = document.getElementById("myText").value;
-  //trasferisci quello che è stato scritto in placeholder in un div con classe message template
-  $('.center-right').append('<div class="message template"></div>');
-  $('.message.template').append(messaggio);
-})
+  $('.chat-send').click(function(){
+    //quando scrivo nel placeholder
+    var messaggio = $('#myText').val();
+    //trasferisci quello che è stato scritto in placeholder in un div con classe message template
+    $('.center-right').append('<div class="template"></div>');
+    $('.template').append(messaggio);
+  });
+  //quando il mouse è sulla barra di inserimento messaggio
+  $('.bottom-right').mouseenter(function(){
+    $('.chat-send > i').removeClass('fa-microphone'); //toglie l'icona del microfono
+    $('.chat-send > i').addClass('active'); //mette l'icona della freccia
+  });
+  //quando il mouse esce dalla barra di inserimento messaggio
+  $('.bottom-right').mouseleave(function(){
+    $('.chat-send > i').removeClass('active'); //toglie l'icona della freccia
+    $('.chat-send > i').addClass('fa-microphone'); //rimette l'icona del microfono
+  });
 });

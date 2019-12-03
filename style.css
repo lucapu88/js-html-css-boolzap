@@ -37,6 +37,15 @@
 .icon i {
   padding: 10px 5px;
 }
+/* contenitore campanella */
+.bell-content i {
+  color: #02C0A8;
+  padding: 10px;
+  background-color: white;
+  border-radius: 50%;
+  margin: 10px;
+  float: left;
+}
 /* contenitore della colonna di sinistra fine */
 /* contenitore della parte di destra inizio */
 .container-right{
@@ -61,6 +70,7 @@
   display: flex;
   flex-direction: column;
   justify-content: space-around;
+  align-items: flex-start;
 }
 /* barra di inserimento messaggio */
 .bottom-right {
@@ -90,15 +100,6 @@
 .notifiche {
   background-color: #02C0A8;
 }
-/* contenitore campanella */
-.bell-content i {
-  color: #02C0A8;
-  padding: 10px;
-  background-color: white;
-  border-radius: 50%;
-  margin: 10px;
-  float: left;
-}
 .notifiche-text {
   float: left;
   margin-top: 10px;
@@ -127,6 +128,12 @@
 .chat-send {
   width: 10%;
 }
+.fa-location-arrow {
+  display: none;
+}
+.fa-location-arrow.active {
+  display: block;
+}
 .chat input {
   margin: 15px;
   border-radius: 5px;
@@ -141,5 +148,9 @@
 }
 .template {
   background-color: lightgreen;
+  align-self: flex-end;
+  border-radius: 10px;
+  padding: 20px;
+  margin-right: 30px;
 }
 /* contenitore della parte di destra fine */
