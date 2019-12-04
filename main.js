@@ -8,12 +8,10 @@ $(document).ready(function() {
   $('.chat-send').click(function(){//al click su chat-send
     inviaMessaggio(); //applico la mia funzione creata
     $('.chat-send i').addClass('fa-microphone').removeClass('fa-paper-plane');//torna l'icona del microfono e scompare quella della freccia
-    setTimeout(risposta,1000); //richiamo la mia funzione che invierà una risposta dopo 1 secondo
   });
   $('.myText').keypress(function(event) { //quando si è in posizione dell'input e viene premuto INVIO
     if (event.which == 13) { // se viene premuto INVIO (che corrisponde al numero 13 della mappatura dei tasti)
       inviaMessaggio(); //applico la mia funzione creata
-      setTimeout(risposta,1000); //richiamo la mia funzione che invierà una risposta dopo 1 secondo
     }
   });
   $('.myText').keyup(function(event) { //quando si è in posizione dell'input e si inizia a scrivere
@@ -24,26 +22,26 @@ $(document).ready(function() {
       $('.chat-send i').addClass('fa-microphone').removeClass('fa-paper-plane'); //resta l'icona del microfono e scompare quella della freccia
     }
   });
-  $('.search').keypress(function(event){
-    var contatto = $('search-input').val(); //recupero il testo inserito nella ricerca
-    if (contatto.length != 0) { //se nella ricerca c'è scritto qualcosa
-      $('.nome-stato p').each(function(){
-        var nomeContatto = $(this).text(); //recupero il nome del contatto
-        if (contatto.toLowerCase() == nomeContatto.toLowerCase()) { //se il testo inserito è uguale al nome del contatto
-          $('contatti').show(); //mostra il contenitore del nome del contatto
+  $('.search-input').keyup(function(event){
+    var contatto = $('.search-input').val(); //recupero il testo inserito nella ricerca
+    if (contatto.length != 0) { //se stiamo scrivendo nella ricerca
+      $('.contatti').each(function(){
+        var nomeContatto = $(this).find('.nome-stato p').text(); //recupero il nome del contatto
+        if (nomeContatto.toLowerCase().includes(contatto.toLowerCase())) { //se il testo inserito include caratteri uguali a quelli del nome del contatto
+          $(this).show(); //mostra il contenitore del nome del contatto
         } else {
-          $('contatti').hide(); //altrimenti nascondi il contenitore del contatto
+          $(this).hide(); //altrimenti nascondi il contenitore del contatto
         }
       });
-    } else { //se invece nella ricerca non  c'è scritto nulla, mostra la lista dei contatti
-      $('.nome-stato p').show();
+    } else { //se invece nella ricerca non c'è scritto nulla, mostra la lista dei contatti
+      $('.contatti').show();
     }
   });
 });
 
 
-
-function risposta() {
+//QUI SOTTO CI SONO LE MIE FUNZIONI CREATE
+function risposta() { //funzione che invierà una risposta dopo 1 secondo
   var messaggioRicevuto = $('.template2 .message-recevied').clone();//clono il template del messaggio
   $('.center-right').append(messaggioRicevuto);//inserisco il messaggio all'interno del container
   }
@@ -54,5 +52,6 @@ function inviaMessaggio() {
     nuovoMessaggio.children('.message-text').text(messaggio); //inserisco nel giusto span il testo del messaggio
     $('.center-right').append(nuovoMessaggio); //inserisco il messaggio all'interno del container
     $('.myText').val(''); //resetto l'input con una stringa vuota
+    setTimeout(risposta,1000); //richiamo la mia funzione che invierà una risposta dopo 1 secondo
   }
 }
