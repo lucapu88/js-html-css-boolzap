@@ -17,6 +17,7 @@
     #dddbd1 15vh,
     #d2dbdc 100%
     );
+    font-family: 'Roboto', sans-serif;
 }
 /* contenitore del quadrato centrale di tutta l'app */
 .container-chat {
@@ -43,6 +44,15 @@
 .contatti {
   background-color: white;
 }
+.contatti:hover {
+  cursor: pointer;
+}
+.contatti p {
+  font-weight: bold;
+}
+.contatti:hover {
+  background-color: lightgrey;
+}
 .search {
   background-color: #F3EEEA;
 }
@@ -50,9 +60,10 @@
   margin-left: 5px;
 }
 .search input {
-  border-radius: 30px;
+  border-radius: 10px;
   width: 88%;
   margin: 5px;
+  padding: 5px;
 }
 .contatti {
   border-bottom: 1px solid lightgrey;
@@ -138,7 +149,7 @@ i:hover {
   display: flex;
 }
 .nome-accesso {
-  padding-top: 5px;
+  margin: 15px 0 0 5px;
 }
 .emoticon {
   width: 10%;
@@ -158,24 +169,30 @@ i:hover {
 /* CONTENITORE DELLA PARTE DI DESTRA FINE */
 /* contenitori non visibili che verranno chiamati dal javascript */
 .message {
+  position: relative;
   background-color: lightgreen;
   align-self: flex-end;
   border-radius: 10px;
   padding: 20px;
   margin-right: 30px;
 }
-.message-recevied {
+.message-recevied, .message-old {
   background-color: white;
   border-radius: 10px;
   padding: 20px;
   margin-left: 30px;
 }
-.template {
-  display: none;
-}
-.template2 {
+.template, .template2, .template3 {
   display: none;
 }
 .message-time {
   font-size: 10px;
+}
+.message-options-panel {
+	display: none;
+	background: white;
+	box-shadow: 0px 0px 40px -15px rgba(0,0,0,0.75);
+}
+.message-options-panel.active {
+  display: block;
 }

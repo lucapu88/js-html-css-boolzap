@@ -1,8 +1,19 @@
+// Milestone 1
+// ● Replica della grafica con la possibilità di avere messaggi scritti dall’utente (verdi) e
+// dall’interlocutore (bianco) assegnando due classi CSS diverse
+// ● Aggiunta di un messaggio : l’utente scrive un testo nella parte bassa e cliccando
+// invia il testo viene aggiunto al thread sopra, come messaggio verde
 // Milestone 2
 // ● Risposta dall’interlocutore: ad ogni inserimento di un messaggio, l’utente riceverà
 // un “ok” come risposta, che apparirà dopo 1 secondo.
 // ● Ricerca utenti: scrivendo qualcosa nell’input a sinistra, vengono visualizzati solo i
 // contatti il cui nome contiene le lettere inserite
+// Milestone 3
+// ● Click sul contatto mostra la conversazione del contatto cliccato, è possibile inserire
+// nuovi messaggi per ogni conversazione
+// ● Cancella messaggio: cliccando sul messaggio appare un menu a tendina che
+// permette di cancellare il messaggio selezionato
+
 
 $(document).ready(function() {
   $('.chat-send').click(function(){//al click su chat-send
@@ -37,7 +48,26 @@ $(document).ready(function() {
       $('.contatti').show();
     }
   });
+  $(document).on('click', '.message-options', function() {
+    $('.message-options-panel').addClass('.active');
+  })
+
 });
+
+//intercetto il click sul div del contatto
+//al click del div bisogna visualizzare la sua conversazione e deve cambiare il nome in alto
+  //1.bisogna cancellare eventuali messaggi precedenti (ad esempio se è stato cliccato prima un altro contatto)
+  //2.bisogna spostare il message del template nel contenitore centrale
+
+
+// $('.contatti').click(function(){ //intercetto il click sul div del contatto
+//     var nomeUtente = $('.nome-stato p').text(); //var contenente il nome dell'utente dei contatti
+//     $(this).each(function(){
+//       $('.nome-accesso p').hide(); //nascondo il nome corrente
+//       $('.nome-accesso').append(nomeUtente); //mostro il nome del contatto cliccato
+//     });
+// });
+
 
 
 //QUI SOTTO CI SONO LE MIE FUNZIONI CREATE
