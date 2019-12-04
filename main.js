@@ -30,9 +30,9 @@ $(document).ready(function() {
       $('.nome-stato p').each(function(){
         var nomeContatto = $(this).text(); //recupero il nome del contatto
         if (contatto.toLowerCase() == nomeContatto.toLowerCase()) { //se il testo inserito è uguale al nome del contatto
-          $(this).show(); //mostra il nome del contatto
+          $('contatti').show(); //mostra il contenitore del nome del contatto
         } else {
-          $(this).hide(); //altrimenti non mostrare nulla
+          $('contatti').hide(); //altrimenti nascondi il contenitore del contatto
         }
       });
     } else { //se invece nella ricerca non  c'è scritto nulla, mostra la lista dei contatti
