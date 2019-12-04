@@ -25,15 +25,23 @@
   height: 90%;
   width: 80%;
 }
-/* contenitore della colonna di sinistra inizio */
+/* CONTENITORE DELLA COLONNA DI SINISTRA INIZIO */
 .container-left{
   width: 30%;
 }
+/* contenitore dei contatti cercati */
 .top-left {
   width: 100%;
   height: 10%;
   position: relative;
   background-color: lightgrey;
+}
+.nome-stato {
+  float: right;
+  width: 80%;
+}
+.contatti {
+  background-color: white;
 }
 .search {
   background-color: #F3EEEA;
@@ -78,15 +86,14 @@ i:hover {
   float: left;
   margin-top: 10px;
 }
-/* contenitore della colonna di sinistra fine */
-/* contenitore della parte di destra inizio */
+/* CONTENITORE DELLA COLONNA DI SINISTRA FINE */
+/* CONTENITORE DELLA PARTE DI DESTRA INIZIO */
 .container-right{
   width: 70%;
   display: flex;
   flex-direction: column;
   border-left: 1px solid grey;
 }
-
 /* barra del contatto in alto */
 .top-right {
   width: 100%;
@@ -133,13 +140,6 @@ i:hover {
 .nome-accesso {
   padding-top: 5px;
 }
-.nome-stato {
-  float: right;
-  width: 80%;
-}
-.contatti {
-  background-color: white;
-}
 .emoticon {
   width: 10%;
 }
@@ -155,7 +155,8 @@ i:hover {
   padding: 5px;
   width: 95%;
 }
-/* contenitore della parte di destra fine */
+/* CONTENITORE DELLA PARTE DI DESTRA FINE */
+/* contenitori non visibili che verranno chiamati dal javascript */
 .message {
   background-color: lightgreen;
   align-self: flex-end;
