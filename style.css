@@ -128,7 +128,7 @@ i:hover {
   display: none;
 }
 .center-right.active {
-  display: block;
+  display: flex;
 }
 /* barra di inserimento messaggio */
 .bottom-right {

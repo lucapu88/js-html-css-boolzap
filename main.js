@@ -58,28 +58,34 @@ $(document).ready(function() {
     var contattoCliccato = $(this).find('.nome-stato p').text(); //prendo solo il nome del contatto cliccato
     $('.nome-accesso p').text(contattoCliccato); //cambio il nome del contatto della barra in alto con quello del contatto cliccato
   });
+  $(document).on('mouseenter', '.message', function() { //quando sei con il mouse sul messaggio
+    $('.message-options').show(); //appare la freccia per mostrare le opzioni
+  });
+  $(document).on('mouseleave', '.message', function() { //quando sei con il mouse fuori dal messaggio
+    $('.message-options').hide(); //scompare la freccia per mostrare le opzioni
+  });
 
-
+  $(document).on('click', '.message-options', function() { //quando clicco sulla freccia del messaggio inviato
+    $(this).siblings('.message-options-panel').toggleClass('active'); //appare o scompare il pannello delle opzioni
+  });
+  $(document).on('click', '.message-destroy', function() { //quando clicco su cancella messaggio
+    $(this).closest('.message').hide(); //cancella l'intero div message
+  });
 });
 
-// $(document).on('click', '.message .message-options', function() { //quando clicco sulla freccia del messaggio inviato
-//   var messaggioCliccato = $(this).next();
-//   if (messaggioCliccato.is(':visible')) {
-//      $('.message-options-panel').toggleClass('active'); //appare il pannello delle opzioni
-//   }
-// });
+
 
 //QUI SOTTO CI SONO LE MIE FUNZIONI CREATE
 function risposta() { //funzione che invierà una risposta dopo 1 secondo
   var messaggioRicevuto = $('.template2 .message-recevied').clone();//clono il template del messaggio
-  $('.center-right').append(messaggioRicevuto);//inserisco il messaggio all'interno del container
+  $('.center-right.active').append(messaggioRicevuto);//inserisco il messaggio all'interno del container
   }
 function inviaMessaggio() {
   var messaggio = $('.myText').val();  //recupero il contenuto dell'input
   if (messaggio.length != 0) {
     var nuovoMessaggio = $('.template .message').clone(); //clono il template del messaggio
     nuovoMessaggio.children('.message-text').text(messaggio); //inserisco nel giusto span il testo del messaggio
-    $('.center-right').append(nuovoMessaggio); //inserisco il messaggio all'interno del container
+    $('.center-right.active').append(nuovoMessaggio); //inserisco il messaggio all'interno del container
     $('.myText').val(''); //resetto l'input con una stringa vuota
     setTimeout(risposta,1000); //richiamo la mia funzione che invierà una risposta dopo 1 secondo
   }
