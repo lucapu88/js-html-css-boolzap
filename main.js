@@ -48,27 +48,26 @@ $(document).ready(function() {
       $('.contatti').show();
     }
   });
-  $(document).on('click', '.message-options', function() {
-    $('.message-options-panel').addClass('.active');
-  })
+  $('.contatti').click(function(){ //al click su un contatto
+    var indice = $(this).index(); //trovo la posizione del contatto all'interno del contenitore
+    $('.contatti').removeClass('active'); //tolgo la classe active dal contatto attivo
+    $(this).addClass('active'); //aggiungo la classe active sul contatto cliccato
+    $('.center-right').removeClass('active'); //nascondo il riquadro della chat che c'era
+    $('.center-right').eq(indice).addClass('active');//sul riquadro della chat con l'indice uguale a quello del contatto aggiungo la classe active per renderlo visibile
+    var contattoCliccato = $(this).find('nome-stato p').text(); //prendo solo il nome del contatto cliccato
+    $('.nome-accesso p').text(contattoCliccato); //cambio il nome del contatto della barra in alto con quello del contatto cliccato
+    
+  });
+
 
 });
 
-//intercetto il click sul div del contatto
-//al click del div bisogna visualizzare la sua conversazione e deve cambiare il nome in alto
-  //1.bisogna cancellare eventuali messaggi precedenti (ad esempio se è stato cliccato prima un altro contatto)
-  //2.bisogna spostare il message del template nel contenitore centrale
-
-
-// $('.contatti').click(function(){ //intercetto il click sul div del contatto
-//     var nomeUtente = $('.nome-stato p').text(); //var contenente il nome dell'utente dei contatti
-//     $(this).each(function(){
-//       $('.nome-accesso p').hide(); //nascondo il nome corrente
-//       $('.nome-accesso').append(nomeUtente); //mostro il nome del contatto cliccato
-//     });
+// $(document).on('click', '.message .message-options', function() { //quando clicco sulla freccia del messaggio inviato
+//   var messaggioCliccato = $(this).next();
+//   if (messaggioCliccato.is(':visible')) {
+//      $('.message-options-panel').toggleClass('active'); //appare il pannello delle opzioni
+//   }
 // });
-
-
 
 //QUI SOTTO CI SONO LE MIE FUNZIONI CREATE
 function risposta() { //funzione che invierà una risposta dopo 1 secondo
