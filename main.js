@@ -57,6 +57,8 @@ $(document).ready(function() {
     $('.center-right').eq(indice).addClass('active');//sul riquadro della chat con l'indice uguale a quello del contatto aggiungo la classe active per renderlo visibile
     var contattoCliccato = $(this).find('.nome-stato p').text(); //prendo solo il nome del contatto cliccato
     $('.nome-accesso p').text(contattoCliccato); //cambio il nome del contatto della barra in alto con quello del contatto cliccato
+    var immagineContatto = $(this).children('.user-img').children('img').attr('src'); //prendo l'immagine del contatto cliccato
+    $('.top-right .user-img img').attr('src', immagineContatto);
   });
   $(document).on('mouseenter', '.message', function() { //quando sei con il mouse sul messaggio
     $('.message-options').show(); //appare la freccia per mostrare le opzioni
