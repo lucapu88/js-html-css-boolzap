@@ -52,7 +52,7 @@ $(document).ready(function() {
     var indice = $(this).index('.contatti'); //trovo la posizione del contatto all'interno del contenitore
     console.log(indice);
     $('.contatti').removeClass('active'); //tolgo la classe active dal contatto attivo
-    $(this).addClass('active'); //aggiungo la classe active sul contatto cliccato
+    $(this).addClass('active'); //aggiungo la classe active sul contatto cliccato per evidenziarlo
     $('.center-right').removeClass('active'); //nascondo il riquadro della chat che c'era
     $('.center-right').eq(indice).addClass('active');//sul riquadro della chat con l'indice uguale a quello del contatto aggiungo la classe active per renderlo visibile
     var contattoCliccato = $(this).find('.nome-stato p').text(); //prendo solo il nome del contatto cliccato
