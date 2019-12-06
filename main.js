@@ -60,10 +60,10 @@ $(document).ready(function() {
     var immagineContatto = $(this).children('.user-img').children('img').attr('src'); //prendo l'immagine del contatto cliccato
     $('.top-right .user-img img').attr('src', immagineContatto); //la vado ad attribuire alla barra in alto della chat in questione
   });
-  $(document).on('mouseenter', '.message', function() { //quando sei con il mouse sul messaggio
+  $(document).on('mouseenter', '.message,.message-recevied', function() { //quando sei con il mouse sul messaggio
     $(this).children('.message-options').show(); //appare la freccia per mostrare le opzioni
   });
-  $(document).on('mouseleave', '.message', function() { //quando sei con il mouse fuori dal messaggio
+  $(document).on('mouseleave', '.message,.message-recevied', function() { //quando sei con il mouse fuori dal messaggio
     $(this).children('.message-options').hide(); //scompare la freccia per mostrare le opzioni
   });
 
@@ -71,7 +71,7 @@ $(document).ready(function() {
     $(this).siblings('.message-options-panel').toggleClass('active'); //appare o scompare il pannello delle opzioni
   });
   $(document).on('click', '.message-destroy', function() { //quando clicco su cancella messaggio
-    $(this).closest('.message').hide(); //cancella l'intero div message
+    $(this).closest('.message,.message-recevied').hide(); //cancella l'intero div message
   });
 });
 

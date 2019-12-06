@@ -51,7 +51,7 @@
   font-weight: bold;
 }
 .contatti:hover {
-  background-color: lightgrey;
+  background-color: #F3EEEA;
 }
 .contatti.active {
   background-color: lightgrey;
@@ -182,8 +182,10 @@ i:hover {
   border-radius: 10px;
   padding: 20px;
   margin-right: 30px;
+  margin-bottom: 15px;
 }
 .message-recevied {
+  position: relative;
   background-color: white;
   border-radius: 10px;
   padding: 20px;
