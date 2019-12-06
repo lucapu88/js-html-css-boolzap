@@ -192,6 +192,9 @@ i:hover {
 .message-time {
   font-size: 10px;
 }
+.message-options{
+  display: none;
+}
 .message-options-panel {
 	display: none;
 	background: white;
