@@ -74,29 +74,28 @@ $(document).ready(function() {
     $(this).closest('.message,.message-recevied').hide(); //cancella l'intero div message
   });
 });
-//HANDLEBARS PROVA
-// 1- recupero il codice html del template
-var template_html = $('#myTemplate').html();
-// 2- do in pasto a handlebars il codice html
-var template_function = Handlebars.compile(template_html);
-// 3- predispongo le variabili da utilizzare nel template
-var varMessaggioInviato = {
-  'classe1' : 'template2',
-  'classe2' : 'message-recevied',
-  'messaggio' : 'Ciaooooooo come stai?',
-  'messaggioTempo' : '13.20',
-  'messaggioInfo' : 'Info messaggio',
-  'messaggioCancella' : 'Cancella messaggio'
-};
-// 4- utilizzando la funzione generata da handlebars al punto 2, creo l'html finale in cui i vari placeholder vengono sostituiti con il valore delle proprietà definite nell'oggetto "variabileContatti"
-  var html_finale = template_function(varMessaggioInviato);
-  // 5- vedi function risposta qui sotto.
+
+
 
 
 //QUI SOTTO CI SONO LE MIE FUNZIONI CREATE
 function risposta() { //funzione che invierà una risposta dopo 1 secondo
-  // var messaggioRicevuto = $('.template2 .message-recevied').clone();//clono il template del messaggio
-  //$('.center-right.active').append(messaggioRicevuto);//inserisco il messaggio all'interno del container
+  //HANDLEBARS PROVA
+  // 1. recupero il codice html del template
+  var template_html = $('#myTemplate').html();
+  // 2. passo a handlebars il codice html
+  var template_function = Handlebars.compile(template_html);
+  // 3. creo la variabile da utilizzare nel template
+  var varMessaggioInviato = {
+    'classe1' : 'template2',
+    'classe2' : 'message-recevied',
+    'messaggio' : 'Ciaooooooo come stai?',
+    'messaggioTempo' : '13.20',
+    'messaggioInfo' : 'Info messaggio',
+    'messaggioCancella' : 'Cancella messaggio'
+  };
+  // 4. utilizzando la funzione generata da handlebars al punto 2, creo l'html finale in cui i vari placeholder verranno scambiati con il valore delle proprietà definite in "varMessaggioInviato"
+    var html_finale = template_function(varMessaggioInviato);
   $('.center-right.active').append(html_finale);// 5- appendo nel DOM l'html ottenuto tramite handlebars
   }
 function inviaMessaggio() {
