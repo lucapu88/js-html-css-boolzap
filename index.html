@@ -5,6 +5,7 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
     <title>MyWhatsApp</title>
     <link rel="shortcut icon" href="https://icon-library.net/images/whatsapp-icon-png/whatsapp-icon-png-8.jpg" />
     <link rel="stylesheet" href="style.css">
@@ -46,6 +47,7 @@
             </div>
           </div>
           <div class="top-left contatti"> <!-- contenitore dei contatti cercati -->
+
             <div class="user-img">
               <img src="https://cc-media-foxit.fichub.com/image/fox-it-mondofox/8e505264-a5f1-43e0-b9c6-84d7138b2fc0/homer-simpson-630x630.jpg" alt="profile-foto">
             </div>
@@ -185,6 +187,7 @@
         </div>
       </div>
     </div>
+
 <!-- contenitori non visibili che verranno chiamati dal javascript -->
     <div class="template">
 			<div class="message">
@@ -197,17 +200,20 @@
 				</div>
 			</div>
     </div>
-    <div class="template2">
-      <div class="message-recevied">
-        <span class="message-text">Ciaooooooo come stai?</span>
-        <i class="fa fa-chevron-down f-right message-options"></i>
-				<span class="message-time">13.20</span>
-				<div class="message-options-panel">
-					<div class="message-info">Info messaggio</div>
-					<div class="message-destroy">Cancella messaggio</div>
-				</div>
+    <!-- HANDLEBARS PROVA -->
+    <script id="myTemplate" type="text/x-handlebars-template">
+      <div class={{classe1}}>
+        <div class={{classe2}}>
+          <span class="message-text">{{messaggio}}</span>
+          <i class="fa fa-chevron-down f-right message-options"></i>
+  				<span class="message-time">{{messaggioTempo}}</span>
+  				<div class="message-options-panel">
+  					<div class="message-info">{{messaggioInfo}}</div>
+  					<div class="message-destroy">{{messaggioCancella}}</div>
+  				</div>
+        </div>
       </div>
-    </div>
+    </script>
     </div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
