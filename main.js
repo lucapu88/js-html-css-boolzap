@@ -77,33 +77,22 @@ $(document).ready(function() {
 
 
 
-
 //QUI SOTTO CI SONO LE MIE FUNZIONI CREATE
 function risposta() { //funzione che invierà una risposta dopo 1 secondo
-  //HANDLEBARS PROVA
-  // 1. recupero il codice html del template
-  var template_html = $('#myTemplate').html();
-  // 2. passo a handlebars il codice html
-  var template_function = Handlebars.compile(template_html);
-  // 3. creo la variabile da utilizzare nel template
-  var varMessaggioInviato = {
-    'classe1' : 'template2',
-    'classe2' : 'message-recevied',
-    'messaggio' : 'Ciaooooooo come stai?',
-    'messaggioTempo' : '13.20',
-    'messaggioInfo' : 'Info messaggio',
-    'messaggioCancella' : 'Cancella messaggio'
-  };
-  // 4. utilizzando la funzione generata da handlebars al punto 2, creo l'html finale in cui i vari placeholder verranno scambiati con il valore delle proprietà definite in "varMessaggioInviato"
-    var html_finale = template_function(varMessaggioInviato);
-  $('.center-right.active').append(html_finale);// 5- appendo nel DOM l'html ottenuto tramite handlebars
+  var messaggioRicevuto = $('.template2 .message-recevied').clone();//clono il template del messaggio
+  $('.center-right.active').append(messaggioRicevuto);//inserisco il messaggio all'interno del container
   }
+  // HANDLEBARS INIZIO
+  var template_html = $('#myTemplate').html();// 1- recupero il codice html del template
+  var template_function = Handlebars.compile(template_html);// 2- do in pasto a handlebars il codice html
 function inviaMessaggio() {
   var messaggio = $('.myText').val();  //recupero il contenuto dell'input
   if (messaggio.length != 0) {
-    var nuovoMessaggio = $('.template .message').clone(); //clono il template del messaggio
-    nuovoMessaggio.children('.message-text').text(messaggio); //inserisco nel giusto span il testo del messaggio
-    $('.center-right.active').append(nuovoMessaggio); //inserisco il messaggio all'interno del container
+    var placeholder = {// 3- predispongo le variabili da utilizzare nel template
+      'messaggio' : messaggio
+    }
+    var nuovoMessaggio = template_function(placeholder);// 4- utilizzando la funzione generata da handlebars al punto 2, creo l'html finale in cui i vari placeholder vengono sostituiti con il valore delle proprietà definite nell'oggetto "placeholder"
+    $('.center-right.active').append(nuovoMessaggio);// 5- appendo nel DOM l'html ottenuto tramite handlebars  HANDLEBARS FINE
     $('.myText').val(''); //resetto l'input con una stringa vuota
     setTimeout(risposta,1000); //richiamo la mia funzione che invierà una risposta dopo 1 secondo
   }
