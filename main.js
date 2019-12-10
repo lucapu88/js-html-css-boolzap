@@ -92,7 +92,8 @@ function inviaMessaggio() {
       'messaggio' : messaggio
     }
     var nuovoMessaggio = template_function(placeholder);// 4- utilizzando la funzione generata da handlebars al punto 2, creo l'html finale in cui i vari placeholder vengono sostituiti con il valore delle proprietà definite nell'oggetto "placeholder"
-    $('.center-right.active').append(nuovoMessaggio);// 5- appendo nel DOM l'html ottenuto tramite handlebars  HANDLEBARS FINE
+    $('.center-right.active').append(nuovoMessaggio);// 5- appendo nel DOM l'html ottenuto tramite handlebars
+    //HANDLEBARS FINE
     $('.myText').val(''); //resetto l'input con una stringa vuota
     setTimeout(risposta,1000); //richiamo la mia funzione che invierà una risposta dopo 1 secondo
   }
